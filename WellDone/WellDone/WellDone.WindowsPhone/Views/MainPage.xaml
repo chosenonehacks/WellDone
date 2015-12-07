@@ -1,0 +1,131 @@
+﻿<controls:PageBase x:Class="WellDone.Views.MainPage"
+    xmlns:Primitives="using:Telerik.UI.Xaml.Controls.Primitives"
+    xmlns:prism="using:Microsoft.Practices.Prism.Mvvm"
+    xmlns:controls="using:WellDone.Controls"    
+    xmlns:local="using:WellDone"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:designTime="using:WellDone.DesignTime" Background="{StaticResource AppBarBackgroundThemeBrush}">
+
+    <d:Page.DataContext>
+        <designTime:MainPageViewModel/>
+    </d:Page.DataContext>
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="WellDone" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,25,0,0"/>
+            <TextBlock Text="start" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" x:Name="ContentRoot"  VerticalAlignment="Top">
+            <StackPanel>
+                <Button Style="{StaticResource MainListButtonTemplate}" Command="{Binding ShowListDetailCommand}" CommandParameter="inbox">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ms-appx:///Assets/box2-64.png" Stretch="None" Margin="15,0,0,15"/>
+
+                        <Primitives:RadBusyIndicator Width="64" HorizontalAlignment="Center" VerticalAlignment="Center" IsActive="{Binding IsBoxCountersRefreshing,UpdateSourceTrigger=PropertyChanged}" AnimationStyle="AnimationStyle1" Visibility="{Binding IsBoxCountersRefreshing, Converter = {StaticResource BooleanToVisibilityConverter}}"/>
+                        <TextBlock Text="{Binding InBoxCount}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsBoxCountersRefreshing, Converter = {StaticResource InverseBooleanToVisibilityConverter}}"/>
+
+                    <StackPanel  Grid.Column="1" Orientation="Vertical" Margin="15,0,15,0">
+
+                            <TextBlock Text="Inbox" x:Uid="MainPageInboxList" Style="{StaticResource ListViewItemTextBlockStyle}"/>
+                            <TextBlock Text="New unsorted tasks and ideas." x:Uid="MainPageInboxListSubHeader" Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"/>
+
+                        </StackPanel>
+                </Grid>
+            </Button>
+
+                <Button Style="{StaticResource MainListButtonTemplate}" Command="{Binding ShowListDetailCommand}" CommandParameter="today">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ms-appx:///Assets/tear_off_calendar-64.png" Stretch="None" Margin="15,0,0,15"/>
+                        <Primitives:RadBusyIndicator Width="64" HorizontalAlignment="Center" VerticalAlignment="Center" IsActive="{Binding IsBoxCountersRefreshing,UpdateSourceTrigger=PropertyChanged}" AnimationStyle="AnimationStyle1" Visibility="{Binding IsBoxCountersRefreshing, Converter = {StaticResource BooleanToVisibilityConverter}}"/>
+                        <TextBlock Text="{Binding TodayBoxCount}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsBoxCountersRefreshing, Converter = {StaticResource InverseBooleanToVisibilityConverter}}"/>
+
+                        <StackPanel  Grid.Column="1" Orientation="Vertical" Margin="15,0,15,0">
+
+                            <TextBlock Text="Today" x:Uid="MainPageTodayList" Style="{StaticResource ListViewItemTextBlockStyle}"/>
+                            <TextBlock Text="Tasks for today." x:Uid="MainPageTodayListSubHeader" Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"/>
+
+                        </StackPanel>
+                </Grid>
+            </Button>
+
+                <Button Style="{StaticResource MainListButtonTemplate}" Command="{Binding ShowListDetailCommand}" CommandParameter="projects">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ms-appx:///Assets/edit_property-64.png" Stretch="None" Margin="15,0,0,15"/>
+                        <Primitives:RadBusyIndicator Width="64" HorizontalAlignment="Center" VerticalAlignment="Center" IsActive="{Binding IsBoxCountersRefreshing,UpdateSourceTrigger=PropertyChanged}" AnimationStyle="AnimationStyle1" Visibility="{Binding IsBoxCountersRefreshing, Converter = {StaticResource BooleanToVisibilityConverter}}"/>
+                        <TextBlock Text="{Binding ProjectBoxCount}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsBoxCountersRefreshing, Converter = {StaticResource InverseBooleanToVisibilityConverter}}"/>
+
+                    <StackPanel  Grid.Column="1" Orientation="Vertical" Margin="15,0,15,0">
+
+                            <TextBlock Text="Projects" x:Uid="MainPageProjectList" Style="{StaticResource ListViewItemTextBlockStyle}"/>
+                            <TextBlock Text="Yours tasks into projects." x:Uid="MainPageProjectListSubHeader" Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"/> 
+
+                        </StackPanel>
+                </Grid>
+            </Button>
+
+                <Button Style="{StaticResource MainListButtonTemplate}" Command="{Binding ShowListDetailCommand}" CommandParameter="contexts">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ms-appx:///Assets/pin-64.png" Stretch="None" Margin="15,0,0,15"/>
+                        <Primitives:RadBusyIndicator Width="64" HorizontalAlignment="Center" VerticalAlignment="Center" IsActive="{Binding IsBoxCountersRefreshing,UpdateSourceTrigger=PropertyChanged}" AnimationStyle="AnimationStyle1" Visibility="{Binding IsBoxCountersRefreshing, Converter = {StaticResource BooleanToVisibilityConverter}}" />
+                        <TextBlock Text="{Binding ContextsBoxCount}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsBoxCountersRefreshing, Converter = {StaticResource InverseBooleanToVisibilityConverter}}"/>
+                    
+                    <StackPanel  Grid.Column="1" Orientation="Vertical" Margin="15,0,15,0">
+
+                            <TextBlock Text="Contexts" x:Uid="MainPageContextList" Style="{StaticResource ListViewItemTextBlockStyle}"/>
+                            <TextBlock Text="Yours tasks into contexts." x:Uid="MainPageContextListSubheader" Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"/>
+
+                        </StackPanel>
+                </Grid>
+            </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar IsOpen="True">
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Uid="AboutAppBarButton" Command="{Binding NavigateCommand}" Label="About" CommandParameter="about" Icon="Admin"/>
+            </CommandBar.SecondaryCommands>
+            <AppBarButton x:Uid="AddNewAppBarButton" Icon="Add" Label="Add new" Command="{Binding AddNewTaskCommand}"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</controls:PageBase>

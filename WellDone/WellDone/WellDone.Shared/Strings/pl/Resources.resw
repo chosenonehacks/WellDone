@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutAppBarButton.Label" xml:space="preserve">
+    <value>O aplikacji</value>
+  </data>
+  <data name="AboutTextBlock.Text" xml:space="preserve">
+    <value>Aplikacja WellDone to aplikacja uniwersalna, która wspomoże organizację twoich zadań i projektów w zbliżony sposób do metodologi opracowanej przez Davida Allena "Get Things Done" Jesteśmy ciekawi waszych opini o aplikacji, możesz się znami skontaktować przy pomocy poniższego emaila. Ta aplikacja nie jest w żaden sposób powiązana z David Allen &amp; Co.
+</value>
+  </data>
+  <data name="AboutTextBlockDialogContent" xml:space="preserve">
+    <value>Aplikacja WellDone to aplikacja uniwersalna, która wspomoże organizację twoich zadań i projektów w zbliżony sposób do metodologi opracowanej przez Davida Allena "Get Things Done" Jesteśmy ciekawi waszych opini o aplikacji, możesz się znami skontaktować przy pomocy poniższego emaila. Ta aplikacja nie jest w żaden sposób powiązana z David Allen &amp; Co.</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>O aplikacji</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="AddNewAppBarButton.Label" xml:space="preserve">
+    <value>Nowe zadanie</value>
+    <comment>AppBar.Label</comment>
+  </data>
+  <data name="AddNewContextAppBarButton.Label" xml:space="preserve">
+    <value>Nowy kontekst</value>
+    <comment>AppBar.Label</comment>
+  </data>
+  <data name="ContextControlButton.Content" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="ContextControlTextBox.Header" xml:space="preserve">
+    <value>Nazwa kontekstu</value>
+  </data>
+  <data name="CurrentListHeaderText.Text" xml:space="preserve">
+    <value>aktualna lista: </value>
+  </data>
+  <data name="DeleteContextAppBarButton.Label" xml:space="preserve">
+    <value>Usuń wybrany kontekst</value>
+    <comment>AppBar.Label</comment>
+  </data>
+  <data name="DeleteTaskAppBarButton.Label" xml:space="preserve">
+    <value>Usuń zadanie</value>
+    <comment>AppBar.Label</comment>
+  </data>
+  <data name="EditProjectAppBarButton.Label" xml:space="preserve">
+    <value>Edytuj projekt</value>
+    <comment>AppBar.Label</comment>
+  </data>
+  <data name="FacebookSingin.Content" xml:space="preserve">
+    <value>Zaloguj przez Facebooka</value>
+  </data>
+  <data name="FacebookSingin.Width" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="HomeAppBarButton.Label" xml:space="preserve">
+    <value>Początek</value>
+  </data>
+  <data name="LogingTextBlock.Text" xml:space="preserve">
+    <value>Loguję...</value>
+  </data>
+  <data name="MainPageContextList.Text" xml:space="preserve">
+    <value>Konteksty</value>
+  </data>
+  <data name="MainPageContextListSubheader.Text" xml:space="preserve">
+    <value>Zadania kontekstowo.</value>
+  </data>
+  <data name="MainPageInboxList.Text" xml:space="preserve">
+    <value>Skrzynka spraw</value>
+  </data>
+  <data name="MainPageInboxListSubHeader.Text" xml:space="preserve">
+    <value>Nie posortowane zadania</value>
+  </data>
+  <data name="MainPageProjectList.Text" xml:space="preserve">
+    <value>Projekty</value>
+  </data>
+  <data name="MainPageProjectListSubHeader.Text" xml:space="preserve">
+    <value>Zadania w projekty</value>
+  </data>
+  <data name="MainPageTodayList.Text" xml:space="preserve">
+    <value>Dziś</value>
+  </data>
+  <data name="MainPageTodayListSubHeader.Text" xml:space="preserve">
+    <value>Zadania na dziś</value>
+  </data>
+  <data name="MobileServiceAddContextOperation-Content" xml:space="preserve">
+    <value>Nowy kontekst został dodany</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceAddContextOperation-Title" xml:space="preserve">
+    <value>Nowy kontekst</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceAddProjectOperation-Content" xml:space="preserve">
+    <value>Nowy projekt został dodany</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceAddProjectOperation-Title" xml:space="preserve">
+    <value>Nowy projekt</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceAddTaskOperation-Content" xml:space="preserve">
+    <value>Nowe zadanie zostało dodane</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceAddTaskOperation-Title" xml:space="preserve">
+    <value>Nowe zadanie</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceCompleteProjectOperation-Content" xml:space="preserve">
+    <value>Projekt i jego zadania został zakończony</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceCompleteProjectOperation-Title" xml:space="preserve">
+    <value>Projekt zakończony</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceCompleteTaskOperation-Content" xml:space="preserve">
+    <value>Zadanie zostało zakończone</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceCompleteTaskOperation-Title" xml:space="preserve">
+    <value>Zadanie zakończone</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceDeleteContextOperation-Content" xml:space="preserve">
+    <value>Kontekst został usuniety</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceDeleteContextOperation-Title" xml:space="preserve">
+    <value>Usuń kontekst</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceDeleteProjectOperation-Content" xml:space="preserve">
+    <value>Projekt został usunięty</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceDeleteProjectOperation-Title" xml:space="preserve">
+    <value>Usuń projekt</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceDeleteTaskOperation-Content" xml:space="preserve">
+    <value>Zadanie zostało usunięte</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceDeleteTaskOperation-Title" xml:space="preserve">
+    <value>Usuń zadanie</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceException-Content" xml:space="preserve">
+    <value>Sprawdz połączenie z siecią.</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceException-ExitCommand" xml:space="preserve">
+    <value>Zamknij aplikacje</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceException-Title" xml:space="preserve">
+    <value>Problem z usługa sieciową</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceUpdateProjectOperation-Content" xml:space="preserve">
+    <value>Projekt został zaktualizowany</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceUpdateProjectOperation-Title" xml:space="preserve">
+    <value>Aktualizacja projektu</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="MobileServiceUpdateTaskOperation-Content" xml:space="preserve">
+    <value>Zadanie zostało zaktualizowane</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="MobileServiceUpdateTaskOperation-Title" xml:space="preserve">
+    <value>Zaktualizuj zadanie</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="NewContextControlHeaderText" xml:space="preserve">
+    <value>Dodaj nowy kontekst</value>
+  </data>
+  <data name="NewContextName" xml:space="preserve">
+    <value>@nowykontekst</value>
+    <comment>New Context Name</comment>
+  </data>
+  <data name="NewContextPage.Text" xml:space="preserve">
+    <value>Nowy kontekst</value>
+  </data>
+  <data name="NewTaskControlHeaderText" xml:space="preserve">
+    <value>Dodaj nowe zadanie</value>
+  </data>
+  <data name="NewTaskTopic" xml:space="preserve">
+    <value>Twoje nowe zadanie</value>
+    <comment>New Task Topic</comment>
+  </data>
+  <data name="ShowContextTasksAppBarButton.Label" xml:space="preserve">
+    <value>Pokaż zadania kontekstu</value>
+  </data>
+  <data name="ShowProjectTasksAppBarButton.Label" xml:space="preserve">
+    <value>Pokaż zadania projektu</value>
+  </data>
+  <data name="TaskControlButtonSave.Content" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="TaskControlButtonUpdate.Content" xml:space="preserve">
+    <value>Zaktualizuj</value>
+  </data>
+  <data name="TaskControlContextComboBox.Header" xml:space="preserve">
+    <value>Do kontekstu:</value>
+  </data>
+  <data name="TaskControlDueDateCheckBox.Content" xml:space="preserve">
+    <value>Terminowe?</value>
+  </data>
+  <data name="TaskControlIsProjectCheckBox.Content" xml:space="preserve">
+    <value>Jest projektem?</value>
+  </data>
+  <data name="TaskControlProjectComboBox.Header" xml:space="preserve">
+    <value>Do projektu:</value>
+  </data>
+  <data name="TaskControlTopicTextBox.Header" xml:space="preserve">
+    <value>Temat:</value>
+  </data>
+  <data name="TerminalException-Content" xml:space="preserve">
+    <value>Aplikacja musi zakończyć działanie.</value>
+    <comment>Dialog.Content</comment>
+  </data>
+  <data name="TerminalException-ExitCommand" xml:space="preserve">
+    <value>Zamknij aplikacje</value>
+    <comment>Dialog.Command</comment>
+  </data>
+  <data name="TerminalException-Title" xml:space="preserve">
+    <value>Problem z aplikacją.</value>
+    <comment>Dialog.Title</comment>
+  </data>
+  <data name="TwitterSingin.Content" xml:space="preserve">
+    <value>Zaloguj przez Twittera</value>
+  </data>
+  <data name="TwitterSingin.Width" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="UpdateProjectControlHeaderText" xml:space="preserve">
+    <value>Zaktualizuj projekt</value>
+  </data>
+  <data name="UpdateTaskControlHeaderText" xml:space="preserve">
+    <value>Zaktualizuj zadanie</value>
+  </data>
+</root>

@@ -1,0 +1,44 @@
+﻿<controls:PageBase xmlns:Primitives="using:Telerik.UI.Xaml.Controls.Primitives"  x:Class="WellDone.Views.LoginPage"
+    xmlns:prism="using:Microsoft.Practices.Prism.Mvvm"
+    xmlns:controls="using:WellDone.Controls"       
+    xmlns:local="using:WellDone"    
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    xmlns:designTime="using:WellDone.DesignTime">
+
+
+    <d:PageBase.DataContext>
+        <designTime:LoginPageViewModel/>
+    </d:PageBase.DataContext>
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="250"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel>
+                <!--<TextBlock Text="WellDone" Style="{StaticResource HeaderTextBlockStyle}"/>-->
+                <Image Source="ms-appx:///Assets/Wide310x150Logo.scale-80.png" Grid.Column="0" Stretch="None"  />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding IsLogingStarted,Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+
+                <Button  x:Uid="FacebookSingin" Command="{Binding SingInCommand}" CommandParameter="Facebook"/>
+                <Button  x:Uid="TwitterSingin" Command="{Binding SingInCommand}" CommandParameter="Twitter" />
+                
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding IsLogingStarted,Converter={StaticResource BooleanToVisibilityConverter}}">
+                <TextBlock x:Uid="LogingTextBlock"  Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ProgressRing HorizontalAlignment="Center" VerticalAlignment="Center" IsActive="{Binding IsLogingStarted, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding IsBoxCountersRefreshing, Converter = {StaticResource BooleanToVisibilityConverter}}" />                                
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</controls:PageBase>

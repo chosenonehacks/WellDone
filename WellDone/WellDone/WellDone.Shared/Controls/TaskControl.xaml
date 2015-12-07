@@ -1,0 +1,68 @@
+﻿<UserControl
+    x:Class="WellDone.Controls.TaskControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WellDone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Converters="using:WellDone.Converters"
+    mc:Ignorable="d"
+    >
+    <Grid>
+        <Border Background="Black">
+            <Border BorderBrush="White" BorderThickness="1" Margin="2,2,2,2">
+                <StackPanel>
+                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding ControlHeaderText}" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBox x:Uid="TaskControlTopicTextBox" Header="Topic:" Text="{Binding SelectedTask.Topic, Mode=TwoWay}" MaxWidth="250" MinWidth="250" />
+                        <CheckBox x:Uid="TaskControlDueDateCheckBox" Name="checkboxDueDate" Content="Is due date?" IsChecked="{Binding IsTaskDueDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="0,20,10,10"/>
+                        
+                        <!--<StackPanel Visibility="{Binding IsTaskDueDate,UpdateSourceTrigger=PropertyChanged,Converter = {StaticResource BooleanToVisibilityConverter}, Mode=TwoWay}" >-->
+                        <StackPanel Visibility="{Binding Path=IsChecked,ElementName=checkboxDueDate,Converter={StaticResource BooleanToVisibilityConverter}}" >
+                            <DatePicker Header="Do until:" Date="{Binding SelectedTask.DueDate, Converter={StaticResource DateTimeToDateTimeOffsetConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                        </StackPanel>
+
+                        <CheckBox x:Uid="TaskControlIsProjectCheckBox" Name="checkboxIsProject" Content="Is project?" IsChecked="{Binding SelectedTask.IsProject, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="0,20,10,0"/>
+                        <ComboBox x:Uid="TaskControlContextComboBox"
+                                  ItemsSource="{Binding ContextsCollection}" 
+                                  SelectedValue="{Binding SelectedTask.ContextId,Mode=TwoWay}"
+                                  SelectedValuePath="Id"
+                                  Header="Context:" Width="250">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="2">
+                                        <TextBlock Text="{Binding Name}" Margin="2"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Visibility="{Binding Path=IsChecked,ElementName=checkboxIsProject,Converter={StaticResource InverseBooleanToVisibilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        <ComboBox x:Uid="TaskControlProjectComboBox"
+                                  ItemsSource="{Binding ProjectTasksCollection}" 
+                                  SelectedValue="{Binding SelectedTask.ProjectId,Mode=TwoWay}"
+                                  SelectedValuePath="Id"
+                                  Header="Add to project:" Width="250">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical" Margin="2">
+                                        <TextBlock Text="{Binding Topic}" Margin="2"/>                                        
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button x:Uid="TaskControlButtonSave" Content="Save" Command="{Binding SaveNewTaskCommand}" MinWidth="250" Margin="0,40,0,0" Visibility="{Binding IsAddState,UpdateSourceTrigger=PropertyChanged,Converter = {StaticResource BooleanToVisibilityConverter}, Mode=TwoWay}" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsAddState,UpdateSourceTrigger=PropertyChanged,Converter = {StaticResource InverseBooleanToVisibilityConverter}, Mode=TwoWay}" >
+                        <Button x:Uid="TaskControlButtonUpdate" Content="Update" Command="{Binding UpdateCommand}" MinWidth="250" Margin="0,40,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>
