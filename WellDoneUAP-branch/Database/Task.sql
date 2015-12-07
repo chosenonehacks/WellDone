@@ -1,5 +1,0 @@
-﻿CREATE TABLE [dbo].[Task]
-(
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Task] NVARCHAR(MAX) NULL
-)
