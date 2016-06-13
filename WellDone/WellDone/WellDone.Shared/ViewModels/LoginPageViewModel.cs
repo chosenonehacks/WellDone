@@ -124,7 +124,7 @@ namespace WellDone.ViewModels
             {
                 if(!IsConnectedToInternet())
                 {
-                    msg = "You must be conected to internet.";
+                    msg = "You must be connected to internet.";
                     _dialogService.Show(msg, title,exit);
                     break;
                 }

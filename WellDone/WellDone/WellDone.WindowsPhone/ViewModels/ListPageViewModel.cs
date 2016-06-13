@@ -241,7 +241,7 @@ namespace WellDone.ViewModels
                     MainViewModel.IsAppBarVisibile = true;
 
                     
-                    //Controling update or save state on TaskControl
+                    //Controlling update or save state on TaskControl
                     if(_SelectedTask.Id == null)
                     {
                         //Show Save Button
